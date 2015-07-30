@@ -1,0 +1,16 @@
+// All modules assume base was imported first
+
+@import "compass";
+@include global-reset;
+
+// Remove all padding
+// Firefox user-agent stylesheet adds padding on button active state
+* {
+    padding: 0;
+}
+
+// Put everything in a border-box
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+

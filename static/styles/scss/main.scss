@@ -1,0 +1,118 @@
+// Import library modules
+@import "library/modules/base";
+@import "library/modules/components/all";
+@import "library/modules/layout/all";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+  font-family: Lato, sans-serif;
+  padding: 0 2em;
+}
+
+%page-inner {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+h1 {
+  @extend %page-inner;
+  line-height: 3em;
+  text-align: center;
+}
+
+#graphic {
+  @extend %page-inner;// responsive svg
+  position: relative;// tooltip is absolutely positioned
+  border: 1px solid #aaa;
+  margin-bottom: 2em;
+}
+
+svg {
+  // responsive svg
+  display: block;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#state {
+  stroke-width: 1px;
+}
+
+%map-border {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none; // let clicks "pass through" borders
+}
+
+#county-borders {
+  @extend %map-border;
+  stroke: #eee;
+}
+
+#county-border {
+  @extend %map-border;
+  stroke: #777;
+}
+
+#tooltip {
+  background: #fff; // rgba(255,255,255,0.99);
+  border: 1px solid #ccc;
+  @include box-shadow(
+    0 0 1px rgba(0,0,0,.25),
+    0 0 5px rgba(0,0,0,.05)
+  );
+  font-size: .7em;
+  padding: .5em;
+  white-space: nowrap;
+}
+.tooltip-row {
+  & > span {
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
+  }
+  margin-top: .36em;
+}
+.tooltip-color {
+  height: 1em;
+  width: 1em;
+  margin-right: .5em;
+}
+.tooltip-name {
+  width: 5em;
+}
+.tooltip-number {
+  text-align: right;
+  width: 5em;
+}
+.tooltip-percent {
+  text-align: right;
+  width: 4em;
+}
+
+@media (min-width: 30em) {
+  #tooltip {
+    font-size: .8em;
+  }
+}
+
+@media (min-width: 32em) {
+  h1 {
+    font-size: 1.5em;
+    text-align: left;
+    white-space: nowrap;
+  }
+  #tooltip {
+    font-size: .9em;
+  }
+}
+
+@media (min-width: 36em) {
+  #tooltip {
+    font-size: 1em;
+  }
+}

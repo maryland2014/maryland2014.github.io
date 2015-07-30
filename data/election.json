@@ -1,0 +1,10 @@
+{
+    "republican": {
+        "candidate": "Hogan",
+        "color": "#de2d26"
+    },
+    "democrat": {
+        "candidate": "Brown",
+        "color": "#3182bd"
+    }
+}

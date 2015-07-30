@@ -1,0 +1,11 @@
+{
+  "name": "maryland",
+  "version": "0.0.1",
+  "description": "Maryland Elections 2014",
+  "main": "main",
+  "scripts": {
+    "make": "data/make/make.sh",
+    "minify": "uglifyjs static/js/main.js -mc -o static/js/main.min.js"
+  },
+  "author": "Ryan Gomoto"
+}
