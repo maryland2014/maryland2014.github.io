@@ -183,19 +183,21 @@ function ready(error, maryland) {
             k = 4;
             centered = d;
             showCountyBorder(d);
+            showTooltip(d, ["democrat", "republican"]);        
         } else {
             x = width / 2;
             y = height / 2;
             k = 1;
-           centered = null;
-           hideCountyBorder();
+            centered = null;
+            hideCountyBorder();
+            hideTooltip();        
         }
 
         state.transition().duration(750)
             .attr("transform", "translate(" + width/2 + "," + height/2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
             .style("stroke-width", 1/Math.sqrt(k) + "px");
 
-        hideTooltip();
+
     }
 }
 
